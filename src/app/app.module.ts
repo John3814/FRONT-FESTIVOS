@@ -11,13 +11,19 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ObtenerFestivosComponent } from './componentes/obtener-festivos/obtener-festivos.component';
+import { FormsModule } from '@angular/forms';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ReferenciasMaterialModule } from 'src/app/referencias-material.module';
+import { DatePipe } from '@angular/common';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FechaComponent
+    FechaComponent,
+    ObtenerFestivosComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +35,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgxDatatableModule,
+    ReferenciasMaterialModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

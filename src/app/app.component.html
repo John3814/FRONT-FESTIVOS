@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<div class="caja">
+    <mat-toolbar class="mat-primary mat-toolbar-single-row mat-elevatmat-z8" style="position: relative;">
+        <span>Festivos Colombia</span>
+        <span class="spacer"></span>
+        <ul style="list-style-type: none; margin: 0; padding: 0;">
+            <li class="li-nav"><a mat-button routerLink="festivos/obtener-festivos">Obtener Festivos</a></li>
+            <li class="li-nav"><a mat-button routerLink="">Validar Fecha</a></li>
+        </ul>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</div>

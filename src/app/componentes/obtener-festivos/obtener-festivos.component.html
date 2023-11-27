@@ -1,0 +1,21 @@
+<div>
+    <mat-form-field>
+        <mat-label>Año</mat-label>
+        <input matInput [(ngModel)]="year" placeholder="Enter year">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="getFestivos()">Obtener Festivos</button>
+</div>
+<div>
+    <ngx-datatable
+        class="dark"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="20"
+        [rows]="festivos"
+        [columns]="columnas"
+        [columnMode]="modoColumna.force"
+        [limit]="10"
+        [rowHeight]="'auto'">
+    </ngx-datatable>
+</div>
+  

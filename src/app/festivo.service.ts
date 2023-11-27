@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Festivo } from './entidades/festivo';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,15 @@ export class FestivoService {
   constructor(private http: HttpClient) {}
 
   verificarFecha(date: Date): Observable<string> {
-    const año = date.getFullYear();
-    const mes = date.getMonth() + 1;
-    const dia = date.getDate();
-    console.log(año + "/" + mes +"/"+dia);
-    return this.http.get(`${this.festivoUrl}/verificar/${año}/${mes}/${dia}`, {responseType: 'text'});
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    console.log(year + "/" + month + "/" + day);
+    return this.http.get(`${this.festivoUrl}/verificar/${year}/${month}/${day}`, {responseType: 'text'});
+  }
+
+  getFestivos(year: number): Observable<any> {
+    return this.http.get<Festivo[]>(`${this.festivoUrl}/obtener/${year}`);
   }
 
 }
